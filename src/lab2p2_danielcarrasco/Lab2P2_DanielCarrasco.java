@@ -28,7 +28,7 @@ public class Lab2P2_DanielCarrasco {
 
             //Op 1
             if (ops == 1 && vemos == true) {
-                AdminOpUno();
+                AdminOpUno(listitaE);
             } else if (ops == 1 && vemosUss == true) {
                 UssOpUno();
             } else {
@@ -47,7 +47,7 @@ public class Lab2P2_DanielCarrasco {
 
     }
 
-    public static void AdminOpUno() {
+    public static void AdminOpUno( ArrayList listitaE) {
         System.out.println("-----Menu Registro");
         System.out.println("1-. crear casa, edificio o solar");
         System.out.println("2-. Listar");
@@ -55,15 +55,38 @@ public class Lab2P2_DanielCarrasco {
         System.out.println("4-. Borrar");
         System.out.println("5-. Vender");
         int opsM= ninetales.nextInt();
+        
+        do{
+            switch(opsM){
+                case 1:
+                    for (int i = 0; i < listitaE.size(); i++) {
+                        
+                    }
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+                    
+                    break;
+                default:
+                    
+                    break;
+            }
+            
+        }while (opsM<6);
     }
     
     public static void UssOpUno(){
-        System.out.println("-----Menu Registro");
-        System.out.println("1-. crear casa, edificio o solar");
-        System.out.println("2-. Listar");
-        System.out.println("3-. Modificar");
-        System.out.println("4-. Borrar");
-        System.out.println("5-. Vender");
+        System.out.println("1-. Listar");
+        System.out.println("2-. Vender");
         int opsM= ninetales.nextInt();
     }
 

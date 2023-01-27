@@ -7,13 +7,16 @@ package lab2p2_danielcarrasco;
 public class Solares {
     double anchos;
     double largos;
-
-    public Solares(double anchos, double largos) {
-        this.anchos = anchos;
-        this.largos = largos;
-    }
+    String dueño;
+    //Error mío no ponerle el dueño
 
     public Solares() {
+    }
+
+    public Solares(double anchos, double largos, String dueño) {
+        this.anchos = anchos;
+        this.largos = largos;
+        this.dueño = dueño;
     }
 
     public double getAnchos() {
@@ -32,10 +35,20 @@ public class Solares {
         this.largos = largos;
     }
 
+    public String getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(String dueño) {
+        this.dueño = dueño;
+    }
+
     @Override
     public String toString() {
-        return "Solares{" + "anchos=" + anchos + ", largos=" + largos + '}';
+        return "Solares{" + "anchos=" + anchos + ", largos=" + largos + ", due\u00f1o=" + dueño + '}';
     }
+    
+    
     
     
 }
