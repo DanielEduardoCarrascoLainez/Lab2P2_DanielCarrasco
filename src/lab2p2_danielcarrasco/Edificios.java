@@ -4,10 +4,6 @@
  */
 package lab2p2_danielcarrasco;
 
-/**
- *
- * @author Daniel
- */
 public class Edificios {
     
 }
