@@ -41,6 +41,11 @@ public class Edificios {
     public void setReferencia(String referencia) {
         this.referencia = referencia;
     }
+
+    @Override
+    public String toString() {
+        return "Edificios{" + "numPisos=" + numPisos + ", locales=" + locales + ", referencia=" + referencia + '}';
+    }
     
     
 }
