@@ -9,6 +9,7 @@ public class Uss {
     private String usuario;
     private int edad;
     private String pass;
+    //Private por obvias razones
 
     public Uss() {
     }
