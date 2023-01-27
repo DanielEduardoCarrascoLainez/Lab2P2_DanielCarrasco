@@ -12,8 +12,6 @@ public class Lab2P2_DanielCarrasco {
     static Scanner ninetales = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //De una solo pongo lo del uss
-        
         
     }
     
