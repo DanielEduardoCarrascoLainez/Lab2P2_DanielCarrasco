@@ -16,9 +16,11 @@ public class Lab2P2_DanielCarrasco {
     public static void main(String[] args) {
 
         ArrayList listitaE = new ArrayList();
+        ArrayList <Uss> usuarios = new ArrayList();
         Uss admin = new Uss("Pedrito", "admin", 90, "1234");
         boolean vemos = false;
         boolean vemosUss = false;
+        boolean yaInicio = false;
         int ops;
 
         do {
@@ -52,6 +54,25 @@ public class Lab2P2_DanielCarrasco {
                 System.out.println("Usted no puede ingresar sin ser usuario");
             }
             //Fin op 2
+            if(ops==3 && yaInicio==false){
+                Scanner nine= new Scanner(System.in);
+                System.out.println("Ingrese su nombre");
+                String name= nine.nextLine();
+                System.out.println("Ingrese su usuario");
+                String ussuario= nine.nextLine();
+                System.out.println("Ingrese su edad");
+                int edad= nine.nextInt();
+                System.out.println("Ingrese su contraseña");
+                String passw= ninetales.nextLine();
+                
+                if (ussuario.equals(admin.getUsuario()) && passw.equals(admin.getPass())){
+                    System.out.println("Bienvenido administrador");
+                    vemos= true;
+                }else{
+                    Uss nuevoU= new Uss(name,ussuario,edad,passw);
+                    usuarios.add(nuevoU);
+                }
+            }
 
         } while (ops < 5);
 
@@ -95,8 +116,9 @@ public class Lab2P2_DanielCarrasco {
                         int numeroCua = ninetales.nextInt();
                         System.out.println("Ingrese el nombre del dueño");
                         String due = ninetales.nextLine();
+                        String estado= "En construccion";
                         
-                        Casas cass = new Casas(numeroC, numeroB, colorengue, ancho, largo,banu, numeroCua, due);
+                        Casas cass = new Casas(numeroC, numeroB, colorengue, ancho, largo,banu, numeroCua, due,estado);
                         listitaE.add(cass);
                         
                     }else if(opsConstruc== 2){
@@ -108,14 +130,20 @@ public class Lab2P2_DanielCarrasco {
                         String especificar= ninetales.nextLine();
                         System.out.println("Ingrese el nombre del dueño");
                         String dueño= ninetales.nextLine();
+                        String estado= "En construccion";
                         
-                        Edificios edis = new Edificios(pisos,locales,especificar,dueño);
+                        Edificios edis = new Edificios(pisos,locales,especificar,dueño,estado);
                         listitaE.add(edis);
                     }else if(opsConstruc==3){
                         System.out.println("Ingrese el ancho");
-                        int anchos= ninetales.nextInt();
+                        double anchos= ninetales.nextDouble();
                         System.out.println("Ingrese el largo");
+                        double largo= ninetales.nextDouble();
+                        String estado= "En construccion";
+                        double area= anchos*largo;
                         
+                        Solares sol = new Solares(anchos,largo,estado,area);
+                        listitaE.add(sol);
                     }
 
                     break;
