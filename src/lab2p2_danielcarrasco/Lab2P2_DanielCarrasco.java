@@ -162,13 +162,26 @@ public class Lab2P2_DanielCarrasco {
 
                     break;
                 case 4:
+                    System.out.println("Hora de borrar");
+                    for (int i = 0; i < listitaE.size(); i++) {
+                        System.out.println(listitaE.indexOf(listitaE.get(i)) + "[" + listitaE.get(i) + "]");
+                    }
+                    System.out.println("------------------------------");
+                    System.out.println("Que propiedad eliminaremos?");
+                    int posi= ninetales.nextInt();
+                    
+                    listitaE.remove(posi);
+                    System.out.println("------------------------------");
+                    for (int i = 0; i < listitaE.size(); i++) {
+                        System.out.println(listitaE.indexOf(listitaE.get(i)) + "[" + listitaE.get(i) + "]");
+                    }
 
                     break;
                 case 5:
 
                     break;
                 default:
-
+                    System.out.println("Error :/");
                     break;
             }
 
