@@ -8,15 +8,17 @@ public class Solares {
     double anchos;
     double largos;
     String dueño;
-    //Error mío no ponerle el dueño
+    double areaT;
+    //Error mío no ponerle el dueño ni el area
 
     public Solares() {
     }
 
-    public Solares(double anchos, double largos, String dueño) {
+    public Solares(double anchos, double largos, String dueño, double areaT) {
         this.anchos = anchos;
         this.largos = largos;
         this.dueño = dueño;
+        this.areaT = areaT;
     }
 
     public double getAnchos() {
@@ -43,12 +45,18 @@ public class Solares {
         this.dueño = dueño;
     }
 
+    public double getAreaT() {
+        return areaT;
+    }
+
+    public void setAreaT(double areaT) {
+        this.areaT = areaT;
+    }
+
     @Override
     public String toString() {
-        return "Solares{" + "anchos=" + anchos + ", largos=" + largos + ", due\u00f1o=" + dueño + '}';
+        return "Solares{" + "anchos=" + anchos + ", largos=" + largos + ", due\u00f1o=" + dueño + ", areaT=" + areaT + '}';
     }
-    
-    
-    
+
     
 }

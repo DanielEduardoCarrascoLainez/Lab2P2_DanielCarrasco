@@ -83,6 +83,7 @@ public class Lab2P2_DanielCarrasco {
                         int numeroC = ninetales.nextInt();
                         System.out.println("Ingrese el numero de bloque");
                         int numeroB = ninetales.nextInt();
+                        //Luego arreglo esta parte espero
                         JColorChooser.showDialog(null, "aja", colorengue);
                         System.out.println("Ingrese el ancho de la casa");
                         double ancho = ninetales.nextDouble();
@@ -94,8 +95,27 @@ public class Lab2P2_DanielCarrasco {
                         int numeroCua = ninetales.nextInt();
                         System.out.println("Ingrese el nombre del dueño");
                         String due = ninetales.nextLine();
-
+                        
                         Casas cass = new Casas(numeroC, numeroB, colorengue, ancho, largo,banu, numeroCua, due);
+                        listitaE.add(cass);
+                        
+                    }else if(opsConstruc== 2){
+                        System.out.println("Ingrese la cantidad de pisos");
+                        int pisos= ninetales.nextInt();
+                        System.out.println("Ingrese el numero de locales");
+                        int locales= ninetales.nextInt();
+                        System.out.println("Ingrese las referencias del lugar, es decir la ubicacion");
+                        String especificar= ninetales.nextLine();
+                        System.out.println("Ingrese el nombre del dueño");
+                        String dueño= ninetales.nextLine();
+                        
+                        Edificios edis = new Edificios(pisos,locales,especificar,dueño);
+                        listitaE.add(edis);
+                    }else if(opsConstruc==3){
+                        System.out.println("Ingrese el ancho");
+                        int anchos= ninetales.nextInt();
+                        System.out.println("Ingrese el largo");
+                        
                     }
 
                     break;
