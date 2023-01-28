@@ -16,7 +16,7 @@ public class Lab2P2_DanielCarrasco {
     public static void main(String[] args) {
 
         ArrayList listitaE = new ArrayList();
-        ArrayList <Uss> usuarios = new ArrayList();
+        ArrayList<Uss> usuarios = new ArrayList();
         Uss admin = new Uss("Pedrito", "admin", 90, "1234");
         boolean vemos = false;
         boolean vemosUss = false;
@@ -42,7 +42,7 @@ public class Lab2P2_DanielCarrasco {
             if (ops == 1 && vemos == true) {
                 AdminOpUno(listitaE);
             } else if (ops == 1 && vemosUss == true) {
-                UssOpUno();
+                UssOpUno(listitaE);
             } else {
                 System.out.println("Usted no puede ingresar sin hacer log in");
             }
@@ -54,23 +54,25 @@ public class Lab2P2_DanielCarrasco {
                 System.out.println("Usted no puede ingresar sin ser usuario");
             }
             //Fin op 2
-            if(ops==3 && yaInicio==false){
-                Scanner nine= new Scanner(System.in);
+            if (ops == 3 && yaInicio == false) {
+                Scanner nine = new Scanner(System.in);
                 System.out.println("Ingrese su nombre");
-                String name= nine.nextLine();
+                String name = nine.nextLine();
                 System.out.println("Ingrese su usuario");
-                String ussuario= nine.nextLine();
+                String ussuario = nine.nextLine();
                 System.out.println("Ingrese su edad");
-                int edad= nine.nextInt();
+                int edad = nine.nextInt();
                 System.out.println("Ingrese su contraseña");
-                String passw= ninetales.nextLine();
-                
-                if (ussuario.equals(admin.getUsuario()) && passw.equals(admin.getPass())){
+                String passw = ninetales.nextLine();
+
+                if (ussuario.equals(admin.getUsuario()) && passw.equals(admin.getPass())) {
                     System.out.println("Bienvenido administrador");
-                    vemos= true;
-                }else{
-                    Uss nuevoU= new Uss(name,ussuario,edad,passw);
+                    vemos = true;
+                } else {
+                    Uss nuevoU = new Uss(name, ussuario, edad, passw);
                     usuarios.add(nuevoU);
+                    vemosUss = true;
+                    //Banderitas por que me siento a salvo con ellas
                 }
             }
 
@@ -90,7 +92,7 @@ public class Lab2P2_DanielCarrasco {
         do {
             switch (opsM) {
                 case 1:
-                    Color colorengue= Color.red;
+                    Color colorengue = Color.red;
 
                     System.out.println("Elija lo que desea crear");
                     System.out.println("Menu-----");
@@ -116,38 +118,44 @@ public class Lab2P2_DanielCarrasco {
                         int numeroCua = ninetales.nextInt();
                         System.out.println("Ingrese el nombre del dueño");
                         String due = ninetales.nextLine();
-                        String estado= "En construccion";
-                        
-                        Casas cass = new Casas(numeroC, numeroB, colorengue, ancho, largo,banu, numeroCua, due,estado);
+                        String estado = "En construccion";
+
+                        Casas cass = new Casas(numeroC, numeroB, colorengue, ancho, largo, banu, numeroCua, due, estado);
                         listitaE.add(cass);
-                        
-                    }else if(opsConstruc== 2){
+
+                    } else if (opsConstruc == 2) {
                         System.out.println("Ingrese la cantidad de pisos");
-                        int pisos= ninetales.nextInt();
+                        int pisos = ninetales.nextInt();
                         System.out.println("Ingrese el numero de locales");
-                        int locales= ninetales.nextInt();
+                        int locales = ninetales.nextInt();
                         System.out.println("Ingrese las referencias del lugar, es decir la ubicacion");
-                        String especificar= ninetales.nextLine();
+                        String especificar = ninetales.nextLine();
                         System.out.println("Ingrese el nombre del dueño");
-                        String dueño= ninetales.nextLine();
-                        String estado= "En construccion";
-                        
-                        Edificios edis = new Edificios(pisos,locales,especificar,dueño,estado);
+                        String dueño = ninetales.nextLine();
+                        String estado = "En construccion";
+
+                        Edificios edis = new Edificios(pisos, locales, especificar, dueño, estado);
                         listitaE.add(edis);
-                    }else if(opsConstruc==3){
+                    } else if (opsConstruc == 3) {
                         System.out.println("Ingrese el ancho");
-                        double anchos= ninetales.nextDouble();
+                        double anchos = ninetales.nextDouble();
                         System.out.println("Ingrese el largo");
-                        double largo= ninetales.nextDouble();
-                        String estado= "En construccion";
-                        double area= anchos*largo;
-                        
-                        Solares sol = new Solares(anchos,largo,estado,area);
+                        double largo = ninetales.nextDouble();
+                        String estado = "En construccion";
+                        double area = anchos * largo;
+
+                        Solares sol = new Solares(anchos, largo, estado, area);
                         listitaE.add(sol);
+                    } else {
+                        System.out.println("Ingrese una opcion correcta a la otra");
                     }
 
                     break;
                 case 2:
+                    System.out.println("Ahora vamos a listar");
+                    for (int i = 0; i < listitaE.size(); i++) {
+                        System.out.println(listitaE.indexOf(listitaE.get(i)) + "[" + listitaE.get(i) + "]");
+                    }
 
                     break;
                 case 3:
@@ -167,10 +175,31 @@ public class Lab2P2_DanielCarrasco {
         } while (opsM < 6);
     }
 
-    public static void UssOpUno() {
+    public static void UssOpUno(ArrayList listitaE) {
         System.out.println("1-. Listar");
         System.out.println("2-. Vender");
         int opsM = ninetales.nextInt();
+
+        switch (opsM) {
+            case 1:
+                System.out.println("Ahora vamos a listar");
+                for (int i = 0; i < listitaE.size(); i++) {
+                    System.out.println(listitaE.indexOf(listitaE.get(i)) + "[" + listitaE.get(i) + "]");
+                }
+                break;
+            case 2:
+
+                break;
+            default:
+                break;
+        }
+
+        if (opsM == 1) {
+            System.out.println("Ahora vamos a listar");
+            for (int i = 0; i < listitaE.size(); i++) {
+                System.out.println(listitaE.indexOf(listitaE.get(i)) + "[" + listitaE.get(i) + "]");
+            }
+        }
     }
 
 }
